@@ -4,11 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
    <!-- Definition for textEditor bean -->
    <bean id="textEditor" class="com.example.TextEditor">
-      <property name="spellChecker" ref="spellChecker"/>
+      <property name="spellChecker">
+      	<bean id="spellChecker" class="com.example.SpellChecker"/>
+  	  </property>
    </bean>
 
-   <!-- Definition for spellChecker bean -->
-   <bean id="spellChecker" class="com.example.SpellChecker">
-   </bean>
-	
 </beans>
